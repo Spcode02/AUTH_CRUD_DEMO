@@ -21,7 +21,7 @@ function App() {
             }>
           </Route>
           <Route element={<DashboardLayout />}>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard title={"Dashboard"} />} />
             <Route path="/account" element={<UserAccount />} />
             <Route path="/menu" element={<MenuManager />} />
             <Route path="/stores" element={<Stores />} />

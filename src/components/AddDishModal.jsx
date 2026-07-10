@@ -55,7 +55,7 @@ const AddDishModal = ({ open, onOpenChange, whenAddNewDish, editingDish, onUpdat
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="sm:max-w-sm">
                 <DialogHeader>
-                    <DialogTitle>Add New Dish</DialogTitle>
+                    <DialogTitle>{editingDish ? 'Update New Dish' : 'Add New Dish'}</DialogTitle>
                 </DialogHeader>
                 <form action="" onSubmit={handleSubmit} >
                     {/* <div className='flex flex-col gap-2'>
@@ -83,11 +83,11 @@ const AddDishModal = ({ open, onOpenChange, whenAddNewDish, editingDish, onUpdat
                             />
                         </Field>
                     </FieldGroup>
-                    <DialogFooter>
+                    <DialogFooter className="mt-4">
                         <DialogClose asChild>
                             <Button variant="outline">Cancel</Button>
                         </DialogClose>
-                        <Button type="submit">Save Dish</Button>
+                        <Button type="submit">{editingDish ? 'Update Dish' : 'Add Dish'}</Button>
                     </DialogFooter>
                 </form>
             </DialogContent>

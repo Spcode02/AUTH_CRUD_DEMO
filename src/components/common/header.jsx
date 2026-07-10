@@ -6,6 +6,7 @@ import { AuthContext } from "../../context/authContext"
 import { SidebarTrigger } from "../ui/sidebar"
 import { IconMoon, IconSun } from "@tabler/icons-react"
 import { Button } from "../ui/button"
+import { PageHeading } from "./page-heading"
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -54,7 +55,7 @@ export const Header = () => {
                             <div className="ps-2">{userCred.username}</div>
                         </button>
                         {
-                            isOpen && <div className="user-menu-content flex flex-col gap-2 min-w-[100px] absolute right-0 border border-gray-300 p-2">
+                            isOpen && <div className="user-menu-content flex flex-col gap-2 min-w-[100px] absolute right-0 border border-gray-300 p-2 bg-white">
                                 <Link className="px-1" to={'/account'}>My Account</Link>
                                 <Link className="px-1" to={'/'} onClick={logout}>Logout</Link>
                             </div>

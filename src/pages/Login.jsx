@@ -1,7 +1,12 @@
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/authContext';
-
+import { Input } from "@/components/ui/input";
+import { Button } from '@/components/ui/button';
+import {
+    Field,
+    FieldLabel,
+} from "@/components/ui/field"
 function Login() {
     const [formdata, setFormdata] = useState({ username: '', password: '' })
     const [success, setSuccess] = useState(false)
@@ -65,25 +70,30 @@ function Login() {
         <>
             <form onSubmit={submitHandler} className='login-form'>
                 <div className='py-2'>
-                    <input type='text' name="username" value={formdata.username} autoComplete='false' className='border border-solid border-gray-400 rounded px-4 py-1 h-[36px]'
+                    <Field>
+                        <Input type='text' name="username" value={formdata.username}
+                            autoComplete='false'
 
-                        // onChange={(e) => {
-                        //   setFormdata((prev) => ({ ...prev, username: e.target.value }))
-                        // }} 
-                        onChange={handleInputChange}
-                    />
-                    {errors.username && <p className='error-text'>{errors.username}</p>}
+                            // onChange={(e) => {
+                            //   setFormdata((prev) => ({ ...prev, username: e.target.value }))
+                            // }} 
+                            onChange={handleInputChange}
+                            placeholder="Username or Email"
+                        />
+                    </Field>
+                    {errors.username && <p className='error-text mt-1'>{errors.username}</p>}
                 </div>
                 <div className='py-2'>
-                    <input type='password' name="password" value={formdata.password} autoComplete='false' className='border border-gray-400 rounded px-4 py-1 h-[36px]'
+                    <Input type='password' name="password" value={formdata.password} autoComplete='false'
                         // onChange={(e) => {
                         //   setFormdata((prev) => ({ ...prev, password: e.target.value }))
                         // }}
+                        placeholder="Enter Password"
                         onChange={handleInputChange}
                     />
-                    {errors.password && <p className='error-text'>{errors.password}</p>}
+                    {errors.password && <p className='error-text mt-1'>{errors.password}</p>}
                 </div>
-                <button type="submit" className='submit-btn h-[36px] rounded px-4 py-1 my-2'>Submit</button>
+                <Button type="submit">Submit</Button>
             </form>
             {
                 success && <><p style={{ 'color': 'green', 'textAlign': 'center' }}>Submit Successfull !!</p></>

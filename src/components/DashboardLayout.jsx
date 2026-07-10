@@ -3,7 +3,7 @@ import Header from './common/header';
 import { useContext } from 'react';
 import { AuthContext } from '../context/authContext';
 import RDIcons from './icons';
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from './common/app-sidebar';
 import { TooltipProvider } from './ui/tooltip';
 
@@ -15,7 +15,7 @@ const DashboardLayout = () => {
     return (
         <>
             <TooltipProvider delayDuration={0}>
-                <SidebarProvider >
+                <SidebarProvider>
                     <AppSidebar variant="inset" />
                     <SidebarInset>
                         <Header />

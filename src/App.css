@@ -199,6 +199,11 @@ button.submit-btn {
   cursor: pointer;
 }
 
+.error-text {
+  color: #c62828;
+  font-size: 12px;
+}
+
 .blue-btn,
 .primary-btn {
   color: var(--bs-primary);

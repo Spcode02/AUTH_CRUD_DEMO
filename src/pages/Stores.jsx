@@ -1,5 +1,6 @@
 import { initialStores } from "@/assets/storeData"
 import AddStoreModal from "@/components/AddStoreModal"
+import { PageHeading } from "@/components/common/page-heading"
 import RDSVG from "@/components/common/svg"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
@@ -31,7 +32,7 @@ const Stores = () => {
     return (
         <>
             <div className="flex justify-between mb-2">
-                <h2 className="text-2xl bold">Store Management</h2>
+                <PageHeading title={'Store Management'} />
                 <Button variant="default" size="sm"
                     onClick={() => setModalOpen(true)}
                 >

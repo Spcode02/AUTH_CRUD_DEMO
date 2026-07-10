@@ -5,6 +5,7 @@ import RDSVG from "./common/svg";
 import { Button } from "@/components/ui/button"
 import { IconPlus } from "@tabler/icons-react"
 import AddDishModal from "./AddDishModal";
+import { PageHeading } from "./common/page-heading";
 
 
 const MenuManager = () => {
@@ -42,7 +43,7 @@ const MenuManager = () => {
     return (
         <>
             <div className="flex justify-between mb-2">
-                <h2 className="text-2xl bold">Menu Management</h2>
+                <PageHeading title={'Menu Management'} />
                 {/* <button className="btn btn-primary" onClick={() => addNewDish}>
                     + Add New Dish
                 </button> */}
